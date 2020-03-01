@@ -4,16 +4,16 @@
 
 ### Components needed:
 # 
-#### - Dashboard
+#### Dashboard
 ##### - Fancy heading
 ##### - Popular movie list
 # 
-#### - Search
+#### Search
 ##### - Window for search
 ##### - Result space
 ##### - Filter for rating (Demand) and maybe year or genre?
 # 
-#### - Detail
+#### Detail
 ##### - Quick description
 ##### - Info (genre, big actors)
 # 
