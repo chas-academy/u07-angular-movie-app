@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Movie } from '../../movie';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,17 +9,20 @@ import { MovieService } from '../movie.service';
 })
 export class DashboardComponent implements OnInit {
 
-  movies: any[];
+  movies: Movie[];
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    //console.log(this.getMovies());
-    console.log(this.movieService.getMovies());
+
+    this.getPopular();
+  
   }
 
-  getMovies(): void {
-    //this.movies = this.movieService.getMovies();
-  }
+  getPopular(): void {
+    
+    this.movieService.getMovies().subscribe(data => this.movies = data['results']);
+    
 
+  }
 }
