@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+h2 {
+    margin: 20px;
+    font-size: 35px;
+}
+
 .popular {
     background-color: darkblue;
     margin: 5px;
@@ -17,8 +22,31 @@
     background-color: aquamarine;
     font-size: 20px;
     text-align: left;
+    max-width: 350px;
+    display: flex;
+        flex-direction: column;
 }
 
-.pop-movie>span {
+.pop-movie>#title {
+    margin: 0px;
+}
 
+.pop-movie>#released {
+    margin: 0px;
+}
+
+.pop-movie>#description {
+    margin-top: 5px;
+}
+
+.details-link {
+    padding: 10px;
+}
+
+.details-link>a {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: darkblue;
+    color: white;
 }

@@ -4,12 +4,15 @@ body {
 }
 
 header {
+    background-color: darkblue;
+    color: aquamarine;
     display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 }
 
 h1 {
     text-align: center;
     margin: 40px;
+    font-size: 40px;
 }

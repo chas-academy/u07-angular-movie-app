@@ -1,8 +1,15 @@
+<h1></h1>
 <h2>Popular Movies</h2>
 <div class="popular">
     <div class="pop-movie" *ngFor="let movie of movies">
-        <span>Title: {{movie.title}}</span>
+        <span id="title">Title: {{movie.title}}</span>
         <br>
-        <span>Released: {{movie.release_date}}</span>
+        <span id="released">Released: {{movie.release_date}}</span>
+        <br>
+        <span id="description">{{movie.overview}}</span>
+        <br>
+        <div class="details-link">
+            <a href="#"><strong>Details</strong></a>
+        </div>
     </div>
 </div>
