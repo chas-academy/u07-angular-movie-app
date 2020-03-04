@@ -1,4 +1,5 @@
 # U07AngularMovieApp
+## If ng serve --open doesnt work, try:  npm install --save-dev @angular-devkit/build-angular
 
 ## To Do:
 
@@ -22,3 +23,4 @@
 #### - Worth styling it? (function first).
 #### - Check how API part works.
 #### - Have to filters (search and dropdown rating menu)?
+
