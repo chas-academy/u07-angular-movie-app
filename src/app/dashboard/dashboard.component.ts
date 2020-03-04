@@ -10,6 +10,7 @@ import { Movie } from '../../movie';
 export class DashboardComponent implements OnInit {
 
   movies: Movie[];
+  filter = false;
 
   constructor(private movieService: MovieService) { }
 

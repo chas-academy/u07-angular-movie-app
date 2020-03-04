@@ -1,15 +1,16 @@
-<h1></h1>
-<h2>Popular Movies</h2>
-<div class="popular">
-    <div class="pop-movie" *ngFor="let movie of movies">
-        <span id="title">Title: {{movie.title}}</span>
-        <br>
-        <span id="released">Released: {{movie.release_date}}</span>
-        <br>
-        <span id="description">{{movie.overview}}</span>
-        <br>
-        <div class="details-link">
-            <a href="#"><strong>Details</strong></a>
+<div *ngIf="!filter"class="pop-container">
+    <h2>Popular Movies</h2>
+    <div class="popular">
+        <div class="pop-movie" *ngFor="let movie of movies">
+            <span id="title">Title: {{movie.title}}</span>
+            <br>
+            <span id="released">Released: {{movie.release_date}}</span>
+            <br>
+            <span id="description"><span style="text-decoration: underline;">Description:</span> <br>{{movie.overview}}</span>
+            <br>
+            <div class="details-link">
+                <a href="#"><strong>Details</strong></a>
+            </div>
         </div>
     </div>
 </div>
