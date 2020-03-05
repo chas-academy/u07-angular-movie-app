@@ -15,15 +15,10 @@ export class DashboardComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-
     this.getPopular();
-  
   }
 
   getPopular(): void {
-    
     this.movieService.getPopular().subscribe(data => this.movies = data['results']);
-    
-
   }
 }

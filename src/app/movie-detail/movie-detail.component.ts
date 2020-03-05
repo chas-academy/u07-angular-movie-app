@@ -13,6 +13,7 @@ export class MovieDetailComponent implements OnInit {
 
   movie: Movie;
 
+
   constructor( 
     private movieService: MovieService, 
     private route: ActivatedRoute, 

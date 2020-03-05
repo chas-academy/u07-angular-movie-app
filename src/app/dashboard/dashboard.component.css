@@ -29,6 +29,10 @@ h2 {
         flex-direction: column;
 }
 
+.pop-movie>img {
+    height: 450px;
+}
+
 .pop-movie>#title {
     margin: 0px;
 }

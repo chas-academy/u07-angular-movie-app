@@ -1,8 +1,10 @@
 <div class="detail-container">
     <div class="details">
-        <span><strong>Title:</strong> {{movie.title}}</span>
+        <span><strong>Title: </strong>{{movie.title}}</span>
         <span><strong>Release Date: </strong>{{movie.release_date}}</span>
         <span><strong>Runtime: </strong>{{movie.runtime}}</span>
-        <span><strong>Box office Revenue: </strong>{{movie.revenue}}$</span>
+        <span><strong>Box office Revenue: </strong>${{movie.revenue}}</span>
+        <span><strong>Description: </strong><br>
+            {{movie.overview}}</span>
     </div>
 </div>
