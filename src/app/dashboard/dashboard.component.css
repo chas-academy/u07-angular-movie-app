@@ -35,6 +35,7 @@ h2 {
 
 .pop-movie>#title {
     margin: 0px;
+    max-width: 300px;
 }
 
 .pop-movie>#released {
