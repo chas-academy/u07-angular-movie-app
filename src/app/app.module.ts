@@ -7,16 +7,22 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './movie.service';
 import { FilterComponent } from './filter/filter.component';
+import { FilterResultComponent } from './filter-result/filter-result.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    FilterComponent
+    FilterComponent,
+    FilterResultComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@
 h2 {
     margin: 20px;
     font-size: 35px;
+    text-decoration: underline;
 }
 
 .popular {
@@ -18,7 +19,8 @@ h2 {
 
 .pop-movie {
     border: 1px solid black;
-    margin: 5px;
+    border-radius: 5px;
+    margin: 8px;
     background-color: aquamarine;
     font-size: 20px;
     text-align: left;
@@ -49,4 +51,5 @@ h2 {
     padding: 3px;
     background-color: darkblue;
     color: white;
+    font-size: 18px;
 }

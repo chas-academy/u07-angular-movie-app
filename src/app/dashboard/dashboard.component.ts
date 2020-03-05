@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   getPopular(): void {
     
-    this.movieService.getMovies().subscribe(data => this.movies = data['results']);
+    this.movieService.getPopular().subscribe(data => this.movies = data['results']);
     
 
   }

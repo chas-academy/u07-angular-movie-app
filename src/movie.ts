@@ -1,4 +1,6 @@
 export class Movie {
-    original_title: string;
+    title: string;
     release_date: string;
+    runtime: number;
+    revenue: number;
 }

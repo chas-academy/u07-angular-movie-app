@@ -1,0 +1,11 @@
+.detail-container {
+    margin: 5px;
+    padding: 10px;
+    background-color: darkblue;
+}
+
+.details {
+    background-color: aquamarine;
+    display: flex;
+        flex-direction: column;
+}
