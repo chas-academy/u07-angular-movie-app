@@ -1,10 +1,29 @@
-<div class="detail-container">
-    <div class="details">
-        <span><strong>Title: </strong>{{movie.title}}</span>
-        <span><strong>Release Date: </strong>{{movie.release_date}}</span>
-        <span><strong>Runtime: </strong>{{movie.runtime}}</span>
-        <span><strong>Box office Revenue: </strong>${{movie.revenue}}</span>
-        <span><strong>Description: </strong><br>
-            {{movie.overview}}</span>
+<div class="detail-component">
+    <h2 id="overview">{{movie.title}}</h2>
+    <div class="detail-container">
+        <div class="details">
+            <div class="detail-img">
+                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" 
+                     alt="Poster image"
+                     height="450px" width="300px">
+            </div>
+            <div class="info-text">
+                <span id="title"><h2><strong>Title: </strong>{{movie.title}}</h2></span>
+                <div class="detail-boxes">
+                    <div class="first-detail-box">
+                        <span><strong>Release Date: </strong>{{movie.release_date}}</span>
+                        <span><strong>Runtime: </strong>{{movie.runtime}}min</span>
+                        <span><strong>Box office Revenue: </strong>${{movie.revenue}}</span>
+                    </div>
+                    <div class="second-detail-box">
+                        <span><strong>Budget: </strong>${{movie.budget}}</span>
+                        <span><strong>Rating: </strong>{{movie.vote_average}}/10</span>
+                        <span><strong>Votes: </strong>{{movie.vote_count}}</span>
+                    </div>
+                </div>
+                <span id="description"><strong>Description: </strong><br>
+                    {{movie.overview}}</span>
+            </div>
+        </div>
     </div>
 </div>

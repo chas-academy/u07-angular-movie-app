@@ -5,4 +5,7 @@ export class Movie {
     runtime: number;
     revenue: any;
     poster_path: string;
+    vote_average: number;
+    vote_count: number;
+    budget: number;
 }
