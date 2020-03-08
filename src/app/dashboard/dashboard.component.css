@@ -57,4 +57,9 @@ h2 {
     background-color: darkblue;
     color: white;
     font-size: 18px;
+    text-decoration: none;
+}
+
+.details-link>a:hover {
+    text-decoration: underline;
 }

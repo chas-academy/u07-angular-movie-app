@@ -11,22 +11,24 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class FilterComponent implements OnInit {
 
-  $movies: Observable<Movie[]>;
+  movies: Movie;
 
   private searchTerms = new Subject<string>();
 
   constructor(private movieService: MovieService) { }
 
   search(term: string): void {
-    this.searchTerms.next(term);
+    //this.searchTerms.next(term);
+    console.log(term);
+    this.movieService.search(term).subscribe(data => this.movies = data['results']);
+    
   }
 
   ngOnInit(): void {
-    this.$movies = this.searchTerms.pipe(
+    /*this.movies$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((term: string) => this.movieService.search(term))
-    );
-
+      switchMap((term: string) => this.movieService.search(term)),
+    );*/
   }
 }

@@ -8,7 +8,7 @@
 <div class="pop-container">
     <h2>Result</h2>
     <div class="popular">
-        <div class="pop-movie" *ngFor="let movie of $movies">
+        <div class="pop-movie" *ngFor="let movie of movies">
             <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Movie Poster">
             <span id="title"><strong>Title: </strong>{{movie.title}}</span>
             <br>

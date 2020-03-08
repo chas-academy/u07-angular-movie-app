@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Movie } from '../movie';
 import { Observable, observable, of } from 'rxjs';
 
@@ -21,12 +21,9 @@ export class MovieService {
     return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.apiKey}`);
   }
 
-  search(term: string): Observable<Movie[]> {
+  search(term: string) {
     if (!term.trim()) {
-      return of([
-        title = hellu,
-        release_date = '2019-07-20'
-      ]);
+      return of([]);
     }
 
     return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/search/multi?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
