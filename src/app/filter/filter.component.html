@@ -1,11 +1,22 @@
 <div class="filter-container">
     <div class="search">
         <label for="search-bar">Search:</label>
-        <input type="text" placeholder="Search here...">
+        <input #searchBox id="search-bar" type="text" placeholder="Search here..." (input)="search(searchBox.value)">
     </div>
-    <div class="filter">
-        <select name="filter" id="filter">
-            <option value="Ratings">Ratings</option>
-        </select>
+</div>
+
+<div class="pop-container">
+    <h2>Result</h2>
+    <div class="popular">
+        <div class="pop-movie" *ngFor="let movie of $movies">
+            <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Movie Poster">
+            <span id="title"><strong>Title: </strong>{{movie.title}}</span>
+            <br>
+            <span id="released"><strong>Released: </strong>{{movie.release_date}}</span>
+            <br>
+            <div class="details-link">
+                <a routerLink="/detail/{{movie.id}}"><strong>Details</strong></a>
+            </div>
+        </div>
     </div>
 </div>

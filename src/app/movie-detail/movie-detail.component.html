@@ -10,13 +10,23 @@
             <div class="info-text">
                 <span id="title"><h2><strong>Title: </strong>{{movie.title}}</h2></span>
                 <div class="detail-boxes">
-                    <div class="first-detail-box">
+                    <div *ngIf="movie.revenue != 0" class="first-detail-box">
                         <span><strong>Release Date: </strong>{{movie.release_date}}</span>
                         <span><strong>Runtime: </strong>{{movie.runtime}}min</span>
                         <span><strong>Box office Revenue: </strong>${{movie.revenue}}</span>
                     </div>
-                    <div class="second-detail-box">
+                    <div *ngIf="movie.revenue == 0" class="first-detail-box">
+                        <span><strong>Release Date: </strong>{{movie.release_date}}</span>
+                        <span><strong>Runtime: </strong>{{movie.runtime}}min</span>
+                        <span><strong>Box office Revenue: </strong>Not Available</span>
+                    </div>
+                    <div *ngIf="movie.budget != 0" class="second-detail-box">
                         <span><strong>Budget: </strong>${{movie.budget}}</span>
+                        <span><strong>Rating: </strong>{{movie.vote_average}}/10</span>
+                        <span><strong>Votes: </strong>{{movie.vote_count}}</span>
+                    </div>
+                    <div *ngIf="movie.budget == 0" class="second-detail-box">
+                        <span><strong>Budget: </strong>Not Available</span>
                         <span><strong>Rating: </strong>{{movie.vote_average}}/10</span>
                         <span><strong>Votes: </strong>{{movie.vote_count}}</span>
                     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterComponent } from '../filter/filter.component';
+import { Movie } from '../../movie';
 
 @Component({
   selector: 'app-filter-result',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterResultComponent implements OnInit {
 
-  constructor() { }
+  constructor(private filterComponent: FilterComponent) { }
+
+  $movies: Movie[];
 
   ngOnInit(): void {
   }
