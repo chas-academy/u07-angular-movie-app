@@ -25,3 +25,77 @@
     border: 2px solid black;
     padding: 10px 0px 10px 5px;
 }
+
+#search-bar {
+    text-align: left;
+}
+
+* {
+    text-align: center;
+}
+
+h2 {
+    margin: 20px;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.result {
+    background-color: darkblue;
+    margin: 5px;
+    display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+
+.result-movie {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 8px;
+    background-color: aquamarine;
+    font-size: 20px;
+    text-align: left;
+    width: 350px;
+    display: flex;
+        flex-direction: column;
+}
+
+#person {
+    display: none;
+}
+
+img {
+    height: 450px;
+}
+
+#title {
+    margin: 0px;
+    max-width: 300px;
+}
+
+#released {
+    margin: 0px;
+}
+
+#description {
+    margin-top: 5px;
+}
+
+.details-link {
+    padding: 10px;
+}
+
+.details-link>a {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: darkblue;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.details-link>a:hover {
+    text-decoration: underline;
+}

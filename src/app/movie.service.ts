@@ -21,11 +21,24 @@ export class MovieService {
     return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.apiKey}`);
   }
 
-  search(term: string) {
+  searchMovies(term: string) {
     if (!term.trim()) {
       return of([]);
     }
 
-    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/search/multi?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
+    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
   }
+
+  searchActors(term: string) {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/person?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
+  }
+
+  moviesByActor(actor: string) {
+    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/person/${actor['id']}?api_key=${this.apiKey}&append_to_response=credits`);
+  }
+
 }
