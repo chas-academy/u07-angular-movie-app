@@ -22,7 +22,6 @@ export class FilterComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   search(term: string): void {
-    console.log(term);
     this.movieService.searchMovies(term).subscribe(data => this.movies = data['results']);
     this.movieService.searchActors(term).subscribe(data => this.actors = data['results']);
 
@@ -35,10 +34,6 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*this.movies$ = this.searchTerms.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.movieService.search(term)),
-    );*/
+
   }
 }
