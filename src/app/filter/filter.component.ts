@@ -24,8 +24,12 @@ export class FilterComponent implements OnInit {
   search(term: string): void {
     console.log(term);
     this.movieService.searchMovies(term).subscribe(data => this.movies = data['results']);
-    this.movieService.searchActors(term).subscribe(data => this.actors = data['results'][0]);
-    this.movieService.moviesByActor(this.actors).subscribe(data => this.moviesByActor = data['credits']['cast']);
+    this.movieService.searchActors(term).subscribe(data => this.actors = data['results']);
+
+    if (this.actors) {
+      this.movieService.moviesByActor(this.actors).subscribe(data => this.moviesByActor = data['credits']['cast']);
+    }
+    
   }
 
   ngOnInit(): void {

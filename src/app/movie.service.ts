@@ -38,7 +38,11 @@ export class MovieService {
   }
 
   moviesByActor(actor: string) {
-    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/person/${actor['id']}?api_key=${this.apiKey}&append_to_response=credits`);
+    if (!actor) {
+      return of([]);
+    }
+
+    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/person/${actor[0]['id']}?api_key=${this.apiKey}&append_to_response=credits`);
   }
 
 }
