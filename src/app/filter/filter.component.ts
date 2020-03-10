@@ -26,9 +26,11 @@ export class FilterComponent implements OnInit {
     this.movieService.searchMovies(term).subscribe(data => this.movies = data['results']);
     this.movieService.searchActors(term).subscribe(data => this.actors = data['results']);
 
-    if (this.actors) {
-      this.movieService.moviesByActor(this.actors).subscribe(data => this.moviesByActor = data['credits']['cast']);
+    if (!this.actors) {
+      return;
     }
+
+    this.movieService.moviesByActor(this.actors).subscribe(data => this.moviesByActor = data['credits']['cast'].slice(0, 15));
     
   }
 

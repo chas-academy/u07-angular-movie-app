@@ -4,9 +4,6 @@
         <input #searchBox id="search-bar" type="text" placeholder="Search here..." (input)="search(searchBox.value)">
     </div>
 </div>
-<div *ngIf="!searchBox.value">
-
-</div>
 <div class="pop-container" *ngIf="searchBox.value">
     <h2>Result</h2>             
     <div class="result">

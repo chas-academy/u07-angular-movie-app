@@ -37,7 +37,7 @@ export class MovieService {
     return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/person?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
   }
 
-  moviesByActor(actor: string) {
+  moviesByActor(actor: any) {
     if (!actor) {
       return of([]);
     }
