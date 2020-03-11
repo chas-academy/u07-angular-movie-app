@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../movie';
+import { Actor } from '../actor';
 import { Observable, observable, of } from 'rxjs';
 
 @Injectable({
@@ -21,7 +22,7 @@ export class MovieService {
     return this.httpClient.get<Movie>(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.apiKey}`);
   }
 
-  searchMovies(term: string) {
+  searchMovies(term: string): Observable<Movie[]> {
     if (!term.trim()) {
       return of([]);
     }
@@ -29,20 +30,20 @@ export class MovieService {
     return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
   }
 
-  searchActors(term: string) {
+  searchActors(term: string): Observable<Actor[]> {
     if (!term.trim()) {
       return of([]);
     }
 
-    return this.httpClient.get<any>(`https://api.themoviedb.org/3/search/person?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
+    return this.httpClient.get<Actor[]>(`https://api.themoviedb.org/3/search/person?api_key=${this.apiKey}&query=${term}&page=1&include_adult=false`);
   }
 
-  moviesByActor(actor: any) {
+  moviesByActor(actor: Actor): Observable<Movie[]> {
     if (!actor) {
       return of([]);
     }
 
-    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/person/${actor[0]['id']}?api_key=${this.apiKey}&append_to_response=credits`);
+    return this.httpClient.get<Movie[]>(`https://api.themoviedb.org/3/person/${actor['id']}?api_key=${this.apiKey}&append_to_response=credits`);
   }
 
 }
