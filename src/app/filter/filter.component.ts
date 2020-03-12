@@ -23,8 +23,8 @@ export class FilterComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   search(term: string): void {
-    this.movieService.searchMovies(term).pipe(debounceTime(500), distinctUntilChanged()).subscribe(data => this.movies = data['results']);
-    this.movieService.searchActors(term).pipe(debounceTime(500), distinctUntilChanged()).subscribe(data => this.actors = data['results']);
+    this.movieService.searchMovies(term).subscribe(data => this.movies = data['results']);
+    this.movieService.searchActors(term).subscribe(data => this.actors = data['results']);
 
     if (!this.actors) {
       return;
