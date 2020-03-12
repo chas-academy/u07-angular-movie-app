@@ -10,6 +10,7 @@ import { FilterComponent } from './filter/filter.component';
 import { FilterResultComponent } from './filter-result/filter-result.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     DashboardComponent,
     FilterComponent,
     FilterResultComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

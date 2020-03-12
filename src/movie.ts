@@ -8,5 +8,4 @@ export class Movie {
     vote_average: number;
     vote_count: number;
     budget: number;
-    media_type: string;
 }

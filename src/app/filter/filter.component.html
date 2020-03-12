@@ -1,25 +1,14 @@
 <div class="filter-container">
     <div class="search">
         <label for="search-bar">Search:</label>
-        <input #searchBox id="search-bar" type="text" placeholder="Search here..." (input)="search(searchBox.value)">
+        <input #searchBox id="search-bar" placeholder="Search here..." (input)="search(searchBox.value)">
     </div>
 </div>
 <div class="pop-container" *ngIf="searchBox.value">
-    <h2>Result</h2>             
+    <h2>Result</h2>
+    <app-messages></app-messages>          
     <div class="result">
-        <div *ngFor="let movie of movies">
-            <div class="result-movie">
-                <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Movie Poster">
-                <span id="title"><strong>Title: </strong>{{movie.title}}</span>
-                <br>
-                <span id="released"><strong>Released: </strong>{{movie.release_date}}</span>
-                <br>
-                <div class="details-link">
-                    <a routerLink="/detail/{{movie.id}}"><strong>Details</strong></a>
-                </div>
-            </div>
-        </div>
-        <div *ngFor="let movie of moviesByActor">
+        <div *ngFor="let movie of movies$.results | async">
             <div class="result-movie">
                 <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Movie Poster">
                 <span id="title"><strong>Title: </strong>{{movie.title}}</span>
